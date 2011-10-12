@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script type="text/javascript" src="fileread.js"></script>
+        <script type="text/javascript" src="chip8.js"></script>
+    </head>
+
+    <body>
+        <canvas id="screen" width="64" height="32"></canvas><br>
+        <a id="reset">Reset</a> | <a id="run">Run</a><br>
+
+        <script type="text/javascript">
+            var emu = new CHIP8(document.getElementById("screen"),
+                                document.getElementById('run'));
+            window.onload = function() {
+                document.getElementById('reset').onclick = emu.CPUReset;
+                document.getElementById('run').onclick = emu.run;
+                emu.CPUReset();
+            };
+
+
+  </script>
+ </body>
+</html>
